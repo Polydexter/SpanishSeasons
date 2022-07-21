@@ -29,7 +29,7 @@ Then it sorts the teams in accordance with official LaLiga regulations. Main sor
 - total goals scored
 
 Data with games and scores was taken from the site of [RSSSF project](http://www.rsssf.com/) and stored in SQLite database.
-Since necessary data at RSSSF page is stored as a single HTML block with pre-formatted text, I implemented another script ("parser.py")
+Since necessary information at RSSSF page is stored as a single HTML block with pre-formatted text, I implemented another script ("parser.py")
 to extract and store the information by using tools from Selenium and Re libraries.
 
 The Flask-application contains routes with embedded SQL SELECT-queries. Since all the data is preprocessed and stored in the database, the app itself is responsible
