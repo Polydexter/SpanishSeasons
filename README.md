@@ -37,9 +37,7 @@ The Flask-application contains routes with embedded SQL SELECT-queries. Since al
 only for the display of the results of the SELECT-queries. This structure of the app assures quick performance.
 
 ### Technologies used
-languages
-- Python, SQL, HTML, CSS
-frameworks:
-- Flask, Bootstrap
-Python libraries:
-- sqlite3, selenium, re
+
+- languages: Python, SQL, HTML, CSS
+- frameworks: Flask, Bootstrap
+- Python libraries: sqlite3, selenium, re
