@@ -25,7 +25,6 @@ Standings are calculated by a script ("standings.py") which takes as an input ga
 Then it sorts the teams in accordance with official LaLiga regulations. Main sorting criteria is the amount o points. When multiple teams have equal points script uses tie-breaker rules:
 - results of head-to-head games (only when both head-to-head games have already been played)
 - head-to-head goal difference
-When both head-to-head games were not yet played:
 - total goal difference
 - total goals scored
 
