@@ -24,7 +24,7 @@ straight to te end or to the beginning of the season.
 Standings are calculated by a script ("standings.py") which takes as an input games and scores. The script assigns points and keeps track of secondary data (i.e. goal difference).
 Then it sorts the teams in accordance with official LaLiga regulations. Main sorting criteria is the amount o points. When multiple teams have equal points script uses tie-breaker rules:
 - results of head-to-head games (only when both head-to-head games have already been played)
-- head-to-head doal difference
+- head-to-head goal difference
 When both head-to-head games were not yet played:
 - total goal difference
 - total goals scored
