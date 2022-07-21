@@ -40,3 +40,14 @@ only for displaying results of the queries. This structure of the app assures qu
 - languages: Python, SQL, HTML, CSS
 - frameworks: Flask, Bootstrap
 - Python libraries: sqlite3, selenium, re
+
+### Possible improvements
+- More precision
+
+Tie breaker rules are implemented as per current official regulations. These regulation differ from those in effect several years ago due to gradual minor modifications.
+These differences cause sligt imprecisions in the app for distant seasons. This issue could be resolved by additional investigation of the history of LaLiga regulations
+and by some changes in the logic of the sorting script.
+
+- Better visualization
+
+Later on the application may be augmented by a system of dinamic visualization, for example with D3.js library.
