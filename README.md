@@ -15,7 +15,7 @@ The goal of the app is to fill this gap and to provide a simple tool to check Sp
 
 The user interface is pretty simple. There are two webpages: "Home" and "Simulation". Homepage shows the list of seasons available.
 User can pick a season for simulation by clicking a button with dates (i.e. "2021/2022'). After picking a season the user is redirected to the Simulation page.
-"Simulation' page displays the standings after each consecutive Round and corresponding games with scores. 
+"Simulation" page displays the standings after each consecutive Round and corresponding games with scores. 
 Navigation buttons ("First", "Previous", "Next", "Last") allow to move to the next or to the previous round as well as to jump
 straight to te end or to the beginning of the season.
 
