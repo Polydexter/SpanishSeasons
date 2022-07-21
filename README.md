@@ -32,8 +32,8 @@ Data with games and scores was taken from the site of [RSSSF project](http://www
 Since necessary data at RSSSF page is stored as a single HTML block with pre-formatted text, I implemented another script ("parser.py")
 to extract and store the information by using tools from Selenium and Re libraries.
 
-The Flask-application contains routes with embedded SQL SELECT-queries. Since all the data is preprocessed and stored in the database, tha app itself is responsible
-only for the display of the results of the SELECT-queries. This structure of the app assures quick performance.
+The Flask-application contains routes with embedded SQL SELECT-queries. Since all the data is preprocessed and stored in the database, the app itself is responsible
+only for displaying results of the queries. This structure of the app assures quick performance.
 
 ### Technologies used
 
