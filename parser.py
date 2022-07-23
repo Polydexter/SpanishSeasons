@@ -6,25 +6,31 @@ from selenium.webdriver.firefox.options import Options
 
 
 def main():
+    # Webdriver setup
     options = Options()
     options.headless = True
     # Create an instance of webdriver
     driver = webdriver.Firefox(executable_path=r"C:\Program Files (x86)\Mozilla Maintenance Service\geckodriver.exe", options=options)
     # Setup for future iterations through multiple seasons
+
+
+    # Data base setup
+    # Store the data
+    con = sqlite3.connect('seasons.db')
+    cur = con.cursor()
+
+    # cur.execute("DROP TABLE IF EXISTS games")
+    # cur.execute("CREATE TABLE games (season INTEGER, matchday INTEGER, Home TEXT, Away TEXT, HG INTEGER, AG INTEGER)")
+
     season = 2022
+
     url = f"https://www.rsssf.org/tabless/span{season}.html#laliga"
     driver.get(url)
     # Get content from the page by tag name
     content = driver.find_element(By.TAG_NAME, "pre")
     games = get_games(content)
-    #
+
     assert len(games) == 380, f"Expected 380 games per season, got {len(games)}"
-
-    # Store the data
-    con = sqlite3.connect('seasons.db')
-    cur = con.cursor()
-
-    cur.execute("CREATE TABLE games (season INTEGER, matchday INTEGER, Home TEXT, Away TEXT, HG INTEGER, AG INTEGER)")
 
     for game in games:
         cur.execute("INSERT INTO games (season, matchday, Home, Away, HG, AG) VALUES (?, ?, ?, ?, ?, ?)",

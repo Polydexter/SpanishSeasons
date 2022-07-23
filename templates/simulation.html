@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{(standings[0][0] - 1)}}/{{standings[0][0]%100}}
+{% endblock %}
+
+{% block main %}
+    <h4>Season {{(standings[0][0] - 1)}}/{{standings[0][0]%100}} simulation</h4>
+
+    <form action="/simulation" method="post">
+        <h5>Matchday {{standings[0][1]}}</h5>
+        <div class="btn-group">
+        {% if standings[0][1] > 1 %}
+            <button type="submit" class="btn btn-danger" name="matchday" value="1">First</button>
+            <button type="submit" class="btn btn-danger" name="matchday" value="{{standings[0][1] - 1}}">Previous</button>
+        {% endif %}
+        {% if standings[0][1] < 38 %}
+            <button type="submit" class="btn btn-danger" name="matchday" value="{{standings[0][1] + 1}}">Next</button>
+            <button type="submit" class="btn btn-danger" name="matchday" value="38">Last</button>
+        {% endif %}
+        </div>
+        <br>
+    </form>
+
+    <div class="row" style="padding-top:40px">
+    <div class="column">
+        <table class="table table-striped table-sm">
+            <tr>
+                <th>Place</th>
+                <th style="text-align: left;">Team</th>
+                <th>Scored</th>
+                <th>Conceded</th>
+                <th>Points</th>
+            </tr>
+        {% for row in standings %}
+            <tr>
+                <td>
+                    {{row[2]}}
+                </td>
+                <td style="text-align: left;">
+                    {{row[3]}}
+                </td>
+                <td>
+                    {{row[4]}}
+                </td>
+                <td>
+                    {{row[5]}}
+                </td>
+                <td>
+                    {{row[6]}}
+                </td>
+            </tr>
+        {% endfor %}
+
+        </table>
+    </div>
+    <div class="column">
+        <table class="table table-borderless">
+            <tr>
+                <th style="text-align: right;">Home</th>
+                <th>Score</th>
+                <th style="text-align: left;">Away</th>
+            </tr>
+            {% for game in games %}
+                <tr>
+                    <td style="text-align: right;">
+                        {{game[2]}}
+                    </td>
+                    <td width="15%">
+                        {{game[4]}} - {{game[5]}}
+                    </td>
+                    <td style="text-align: left;">
+                        {{game[3]}}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+    <form action="/simulation" method="post">
+        <h4>Matchday {{standings[0][1]}}</h4>
+        <div class="btn-group">
+        {% if standings[0][1] > 1 %}
+            <button type="submit" class="btn btn-danger" name="matchday" value="1">First</button>
+            <button type="submit" class="btn btn-danger" name="matchday" value="{{standings[0][1] - 1}}">Previous</button>
+        {% endif %}
+        {% if standings[0][1] < 38 %}
+            <button type="submit" class="btn btn-danger" name="matchday" value="{{standings[0][1] + 1}}">Next</button>
+            <button type="submit" class="btn btn-danger" name="matchday" value="38">Last</button>
+        {% endif %}
+        </div>
+    </form>
+{% endblock %}

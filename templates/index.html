@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+
+{% block main %}
+    <h3>
+        Results by season
+    </h3>
+    <br>
+    <br>
+
+    <table class="table table-hover w-90">
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Scored</th>
+            <th>Conceded</th>
+            <th>Points</th>
+            <th></th>
+        </tr>
+    {% for row in results %}
+        <tr>
+            <td width="10%">
+                <form action="/" method="post">
+                    <button class="btn btn-danger" type="submit" name="season" value="{{row[0]}}">{{(row[0] - 1)}}/{{row[0]%100}}</button>
+                </form>
+            </td>
+            <td style="text-align: left;">
+                {{row[3]}}
+            </td>
+            <td width="5%">
+                {{row[4]}}
+            </td>
+            <td width="5%">
+                {{row[5]}}
+            </td>
+            <td width="5%">
+                {{row[6]}}
+            </td>
+            <td width="5%">
+                {{row[7]}}
+            </td>
+            <td width="10%" style="text-align: left;">
+                {{row[2]}} place
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
